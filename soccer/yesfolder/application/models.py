@@ -6,12 +6,12 @@ class DashboardStats(models.Model):
     games_played = models.IntegerField()
     wins = models.IntegerField()
     losses = models.IntegerField()
-    total_goals = models.IntegerField()
-    total_saves = models.IntegerField()
-    total_assists = models.IntegerField()
-    total_clean_sheets = models.IntegerField()
-    total_yellow_cards = models.IntegerField()
-    total_red_cards = models.IntegerField()
+    total_goals = models.IntegerField(null=True)
+    total_saves = models.IntegerField(null=True)
+    total_assists = models.IntegerField(null=True)
+    total_clean_sheets = models.IntegerField(null=True)
+    total_yellow_cards = models.IntegerField(null=True)
+    total_red_cards = models.IntegerField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def update_game_stats(self):
