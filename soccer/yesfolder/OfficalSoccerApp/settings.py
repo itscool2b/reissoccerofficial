@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = '9de(a9l06bi+#q=k_h0k!blci-skyt1-g&$@glqja*wcg^(%+('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+DEBUG = True
 
 #ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') + ['reissoccer.onrender.com']
 ALLOWED_HOSTS = ['*']
@@ -85,9 +85,7 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get("DATABASE_URL")
-if database_url:
-    DATABASES['default'] = dj_database_url.parse(database_url)
+
 
 
 # Password validation
@@ -128,7 +126,7 @@ STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'application/static',  # Adjust according to your app's name
+    os.path.join(BASE_DIR, 'application/static'),
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type

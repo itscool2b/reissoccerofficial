@@ -64,7 +64,7 @@
 <body>
     <section>
         <div class="container">
-            <img class="logo" src="../static/images/WPS_Logo (1).png" alt="Logo">
+            <img class="logo" src="{%static 'images/main.png'%}" alt="Logo">
             <h2>Please sign in</h2>
             <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
